@@ -1,11 +1,8 @@
 1.Evaluation of stack operation
 
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #define SIZE 4
-
 int top = -1, inp_array[SIZE];
 void push();
 void pop();
@@ -14,7 +11,6 @@ void show();
 int main()
 {
     int choice;
-
     while (1)
     {
         printf("\nPerform operations on the stack:");
@@ -89,3 +85,45 @@ void show()
 
 2.Conversion of infix to postfix expression
 
+
+#defineSIZE 50 
+#include <ctype.h>
+char s[SIZE];
+int top=-1; 
+void push(char elem)
+{
+s[++top]=elem;
+}
+char pop()
+{
+return(s[top--]);
+}
+int pr(char elem)
+{ 
+switch(elem)
+{
+case '#': return 0;
+case '(': return 1; 
+case '+':
+case '-': return2;
+case '*':
+case '/': return 3;
+}
+return 0;
+}
+Void main()
+{ 
+infx[50],pofx[50],ch,elem; 
+int i=0,k=0;
+printf("\nRead the Infix Expression ?");
+scanf("%s",infx);
+push('#');
+while( (ch=infx[i++]) != '\0')
+{
+if( ch == '(')
+push(ch);
+else if(isalnum(ch)) 
+pofx[k++]=ch;
+else if( ch == ')')
+{
+while( s[top] != '(')

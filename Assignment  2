@@ -127,3 +127,22 @@ pofx[k++]=ch;
 else if( ch == ')')
 {
 while( s[top] != '(')
+pofx[k++]=pop();
+elem=pop(); 
+}
+else
+{ 
+while( pr(s[top]) >= pr(ch) )
+pofx[k++]=pop();
+push(ch);
+}
+}
+while( s[top] != '#') 
+pofx[k++]=pop();
+pofx[k]='\0';
+printf("\n\nGiven Infix Expn: %s
+PostfixExpn: %s\n",infx,pofx);
+}
+
+3.Evaluation of postfix expression 
+
